@@ -67,5 +67,4 @@ public class Vehiculo {
         sb.append('}');
         return sb.toString();
     }
-
 }

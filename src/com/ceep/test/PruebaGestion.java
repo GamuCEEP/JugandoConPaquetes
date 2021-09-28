@@ -5,6 +5,7 @@
  */
 package com.ceep.test;
 
+//Importamos la clase que hemos creado en otro paquete
 import com.ceep.domain.Vehiculo;
 
 /**
