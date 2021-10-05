@@ -29,7 +29,7 @@ public class Test {
         o1.agregar_producto(p4);
         
         o1.mostrar_orden();
-        
+        /*
         Orden o2 = new Orden();
         
         o2.agregar_producto(p1);
@@ -46,5 +46,6 @@ public class Test {
         o2.agregar_producto(p2);
         
         o2.mostrar_orden();
+        */
     }
 }
