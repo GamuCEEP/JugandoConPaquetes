@@ -23,15 +23,15 @@ public class Test {
         Teclado tecladoRazer = new Teclado("teclado","Razer");
         
         Monitor monitorSony = new Monitor("Sony",10.5d);
-        Monitor monitorLG = new Monitor("LG",27.5d);
+        Monitor monitorHP = new Monitor("HP",27.5d);
         Monitor monitorPhilips = new Monitor("Philips",50.5d);
         
         
         
         
-        Computadora c1 = new Computadora("MyPc",monitorLG, tecladoHP, ratonRazer);
-        Computadora c2 = new Computadora("pc1",monitorLG, tecladoSony, ratonHP);
-        Computadora c3 = new Computadora("pcClase",monitorLG, tecladoRazer, ratonSony);
+        Computadora c1 = new Computadora("MyPc",monitorHP, tecladoHP, ratonRazer);
+        Computadora c2 = new Computadora("pc1",monitorHP, tecladoSony, ratonHP);
+        Computadora c3 = new Computadora("pcClase",monitorHP, tecladoHP, ratonHP);
         Computadora c4 = new Computadora("pc2",monitorPhilips, tecladoHP, ratonRazer);
         Computadora c5 = new Computadora("pc3",monitorPhilips, tecladoSony, ratonHP);
         Computadora c6 = new Computadora("pcTrabajo",monitorPhilips, tecladoRazer, ratonSony);
