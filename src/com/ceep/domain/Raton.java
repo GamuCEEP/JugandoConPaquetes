@@ -10,7 +10,7 @@ package com.ceep.domain;
  * @author Alumno Mañana
  */
 public class Raton extends DispositivoEntrada{
-    private int idRaton;
+    private final int idRaton;
     private static int contadorRatones;
     
     public Raton(String tipoEntrada, String marca){
@@ -22,8 +22,7 @@ public class Raton extends DispositivoEntrada{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("idRaton=").append(idRaton);
-        sb.append('}');
+        sb.append(", idRaton=").append(idRaton);
         return sb.toString();
     }
     

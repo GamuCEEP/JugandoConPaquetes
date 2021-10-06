@@ -22,9 +22,9 @@ public class Test {
         Teclado tecladoSony = new Teclado("teclado","Sony");
         Teclado tecladoRazer = new Teclado("teclado","Razer");
         
-        Monitor monitorSony = new Monitor("Sony",27.5d);
+        Monitor monitorSony = new Monitor("Sony",10.5d);
         Monitor monitorLG = new Monitor("LG",27.5d);
-        Monitor monitorPhilips = new Monitor("Philips",27.5d);
+        Monitor monitorPhilips = new Monitor("Philips",50.5d);
         
         
         

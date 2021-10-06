@@ -10,7 +10,7 @@ package com.ceep.domain;
  * @author Alumno Mañana
  */
 public class Teclado extends DispositivoEntrada{
-    private int idTeclado;
+    private final int idTeclado;
     private static int contadorTeclados;
     
     public Teclado(String tipoEntrada, String marca){
@@ -22,7 +22,7 @@ public class Teclado extends DispositivoEntrada{
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("idTeclado=").append(idTeclado);
+        sb.append(", idTeclado=").append(idTeclado);
         return sb.toString();
     }
     
