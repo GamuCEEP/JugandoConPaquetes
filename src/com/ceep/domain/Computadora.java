@@ -10,24 +10,36 @@ package com.ceep.domain;
  * @author Alumno Mañana
  */
 public class Computadora {
-    
-   private final int idComputadora;
-   private static int contadorComputadoras;
-   private String nombre;
-   private Monitor monitor;
-   private Teclado teclado;
-   private Raton raton;
-   
-   public Computadora(){
-       this.idComputadora = contadorComputadoras++;
-   }
-   public Computadora(String nombre, Monitor monitor, Teclado teclado, Raton raton){
-       this();
-       this.nombre = nombre;
-       this.monitor = monitor;
-       this.teclado = teclado;
-       this.raton = raton;
-   }
+
+    private final int idComputadora;
+    private static int contadorComputadoras;
+    private String nombre;
+    private Monitor[] monitores;
+    private final static int MAX_MONITORES = 4;
+    private int contadorMonitores;
+    private Teclado teclado;
+    private Raton raton;
+
+    public Computadora() {
+        this.idComputadora = contadorComputadoras++;
+        this.monitores = new Monitor[MAX_MONITORES];
+    }
+
+    public Computadora(String nombre, Monitor monitor, Teclado teclado, Raton raton) {
+        this();
+        this.nombre = nombre;
+        agregarMonitor(monitor);
+        this.teclado = teclado;
+        this.raton = raton;
+    }
+
+    public void agregarMonitor(Monitor monitor) {
+        if (contadorMonitores >= MAX_MONITORES) {
+            System.out.println("Demasiados monitores");
+            return;
+        }
+        this.monitores[contadorMonitores++] = monitor;
+    }
 
     public String getNombre() {
         return nombre;
@@ -37,12 +49,14 @@ public class Computadora {
         this.nombre = nombre;
     }
 
-    public Monitor getMonitor() {
-        return monitor;
+    public Monitor[] getMonitor() {
+        return monitores;
     }
 
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+    public void setMonitor(Monitor... monitores) {
+        for (Monitor monitor : monitores) {
+            agregarMonitor(monitor);
+        }
     }
 
     public Teclado getTeclado() {
@@ -66,10 +80,15 @@ public class Computadora {
         StringBuilder sb = new StringBuilder();
         sb.append("Computadora:idComputadora=").append(idComputadora);
         sb.append(", nombre=").append(nombre);
-        sb.append(", monitor=").append(monitor);
+        sb.append(", monitores=");
+        for (Monitor monitor : monitores) {
+            if (monitor != null) {
+                sb.append(monitor);
+            }
+        }
         sb.append(", teclado=").append(teclado);
         sb.append(", raton=").append(raton);
         return sb.toString();
     }
-    
+
 }
